@@ -33,7 +33,7 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 ## 4. Functions
 
-4.1. Functon names are lowercase and use underscores.
+4.1. Function names are lowercase and use underscores.
 
 4.2. Use the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
 
