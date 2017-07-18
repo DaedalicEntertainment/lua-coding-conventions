@@ -70,7 +70,9 @@ _You may use the second variant of explicitly assigning it to a variable for spe
       end
 
 
-5.3. _Avoid short or meaningless names (e.g. "a", "rbarr", "nughdeget"). Single character variable names are only okay for counters and temporaries, where the purpose of the variable is obvious._
+5.3. The variable consisting of only an underscore _ is commonly used as a placeholder when you want to ignore the variable.
+
+_In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughdeget"). Single character variable names are only okay for counters and temporaries, where the purpose of the variable is obvious._
 
 ## 6. Constants
 
