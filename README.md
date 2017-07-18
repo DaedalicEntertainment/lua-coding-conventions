@@ -98,19 +98,28 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       // Correct
       if ((a and b) or c) then
 
+9.2. _Don't use spaces after parentheses:_
+
+      // Wrong
+      if ( ( a and b ) or c ) then
+
+      // Correct
+      if ((a and b) or c) then
+
+
 ## 10. Control Flow
 
 10.1. _Do not put `else` after jump statements:_
 
       -- Wrong
-      if (thisOrThat) then
+      if thisOrThat then
           return
       else
           somethingElse()
       end
 
       -- Correct
-      if (thisOrThat) then
+      if thisOrThat then
           return
       end
           
