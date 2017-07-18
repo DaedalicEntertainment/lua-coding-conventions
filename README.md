@@ -149,10 +149,19 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 # Questions
 
 * LuaLint?
-* Modules? Classes?
 * File Structure?
 * Coroutines? http://lua-users.org/wiki/CoroutinesTutorial
-* Tables? http://lua-users.org/wiki/ReadOnlyTables
+* Tables?
+  * http://lua-users.org/wiki/ReadOnlyTables
+  * 65536 keys limit
 * Error Handling:
-** Use error and pcall? https://www.lua.org/pil/8.4.html 
-** Strict Lua? http://lua-users.org/wiki/DetectingUndefinedVariables 
+  *  Use error and pcall? https://www.lua.org/pil/8.4.html 
+  * Strict Lua? http://lua-users.org/wiki/DetectingUndefinedVariables
+* lazy initialization
+* Atom Settings File (2 spaces, CRLF)
+* savegame compatibility
+  * tag savegame variable names
+  * after first release, always test new variables before using them
+* inheritance rules
+* "or _temporary"
+* topics added by Thorben and Daniel
