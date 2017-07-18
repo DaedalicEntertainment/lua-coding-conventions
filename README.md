@@ -35,7 +35,7 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 4.1. Function names are lowercase and use underscores.
 
-4.2. Use the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
+4.2. In general, use the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
 
       -- Right:
       function f(...)
@@ -44,6 +44,8 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
       -- Wrong:
       f = function (...)
       end
+
+_You may use the second variant of explicitly assigning it to a variable for special cases, e.g. using them as function parameters or table values._
 
 ## 5. Variables
 
