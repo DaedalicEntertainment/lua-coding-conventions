@@ -131,6 +131,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 11.2. _Place the comment on a separate line, not at the end of a line of code._
 
+11.3. _Don't use square brackets [[ ]] for comments._
 
 ## 12. Language Features
 
