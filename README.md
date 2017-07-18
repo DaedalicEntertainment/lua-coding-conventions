@@ -47,6 +47,16 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 _You may use the second variant of explicitly assigning it to a variable for special cases, e.g. using them as function parameters or table values._
 
+4.3. _Don't add a space between function name and parameter list:_
+
+      -- Right:
+      function f(...)
+      end
+
+      -- Wrong:
+      function f (...)
+      end
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
