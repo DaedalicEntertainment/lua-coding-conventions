@@ -21,7 +21,7 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 ## 2. Files
 
-2.1. _Files should not be longer than 1000 lines._
+2.1. _Files should not be longer than 1000 lines. Some Lua files might be used in Visionaire projects, in which case they'll be part the project file and must not exceed 65536 characters._
 
 2.2. _Each file should contain a single feature._
 
