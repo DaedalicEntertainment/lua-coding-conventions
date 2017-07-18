@@ -90,13 +90,13 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 ## 9. Parentheses
 
-9.1. Use parentheses to group expressions:
+9.1. _Use parentheses to group expressions:_
 
       // Wrong
-      if (a && b || c)
+      if (a and b or c) then
 
       // Correct
-      if ((a && b) || c)
+      if ((a and b) or c) then
 
 ## 10. Control Flow
 
