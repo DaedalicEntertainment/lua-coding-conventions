@@ -63,6 +63,8 @@ _You may use the second variant of explicitly assigning it to a variable for spe
       function f (...)
       end
 
+4.4. _Functions for accessing fields of a class have their name begin with Get or Set._
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
