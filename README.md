@@ -29,6 +29,8 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.4. _In general, do not use any swearing in symbol names, comments or log output._
 
+2.5. _Do not use special characters such as hyphens (-) in symbol names._
+
 ## 3. Classes
 
 3.1. Class names (or at least metatables representing classes) are mixed case (BankAccount).
