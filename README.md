@@ -27,6 +27,8 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.3. _Each file starts with a header, containing the file name and summary._
 
+2.4. _In general, do not use any swearing in symbol names, comments or log output._
+
 ## 3. Classes
 
 3.1. Class names (or at least metatables representing classes) are mixed case (BankAccount).
