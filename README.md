@@ -39,7 +39,7 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 ## 4. Functions
 
-4.1. Function names are lowercase and use underscores.
+4.1. _Function names are camelCase. If the function is designed to be part of the public interface of a class, its name is PascalCase._
 
 4.2. In general, use the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
 
