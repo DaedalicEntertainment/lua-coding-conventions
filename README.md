@@ -35,6 +35,8 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 3.2. Acronyms (e.g. XML) only uppercase the first letter (XmlDocument). 
 
+3.3. _Use the short syntax with colons (:) for accessing class members._
+
 ## 4. Functions
 
 4.1. Function names are lowercase and use underscores.
