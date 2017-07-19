@@ -25,6 +25,8 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.2. _Each file should contain a single feature._
 
+2.3. _Each file starts with a header, containing the file name and summary._
+
 ## 3. Classes
 
 3.1. Class names (or at least metatables representing classes) are mixed case (BankAccount).
