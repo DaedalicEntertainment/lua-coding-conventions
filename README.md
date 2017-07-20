@@ -174,4 +174,8 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
   * after first release, always test new variables before using them
 * inheritance rules
 * "or _temporary"
+* multiple assignments per line: self._now, self._frameDelta = now, now - self._now
+* for loops: for i = #self._schedule, 1, -1 do
+* usage examples
+* type assertions: assert( type(eventId) == "string", "Invalid parameter #2: expected string, got"..type(eventId) )
 * topics added by Thorben and Daniel
