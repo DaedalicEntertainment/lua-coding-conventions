@@ -53,6 +53,8 @@ _Separate these sections with section headers:_
 
 3.3. _Use the short syntax with colons (:) for accessing class members._
 
+3.4. _Define all fields of your class at the beginning of your class definition, even those that are not used immediately. This gives readers a better overview of the model of the class, and allows for easier documentation of these fields._
+
 ## 4. Functions
 
 4.1. _Function names are camelCase. If the function is designed to be part of the public interface of a class, its name is PascalCase._
