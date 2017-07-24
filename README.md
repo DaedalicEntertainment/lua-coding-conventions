@@ -87,6 +87,8 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
+4.6. _Define abstract functions by providing a default implementation that raises an error._
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
