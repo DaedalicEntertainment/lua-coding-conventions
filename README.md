@@ -27,9 +27,23 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.3. _Each file starts with a header containing the file summary._
 
-2.4. _In general, do not use any swearing in symbol names, comments or log output._
+2.4. _Each file with a class definition should list their members in the following order:_
 
-2.5. _Do not use special characters such as hyphens (-) in symbol names._
+* constants
+* fields
+* constructors
+* public functions (see below)
+* private functions (see below)
+
+_Separate these sections with section headers:_
+
+    -- ----------------------------------------------------------------------------
+    -- Constructors
+    -- ----------------------------------------------------------------------------
+
+2.5. _In general, do not use any swearing in symbol names, comments or log output._
+
+2.6. _Do not use special characters such as hyphens (-) in symbol names._
 
 ## 3. Classes
 
