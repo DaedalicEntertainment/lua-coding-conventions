@@ -106,6 +106,8 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughdeget"). Single character variable names are only okay for counters and temporaries, where the purpose of the variable is obvious._
 
+5.4. _Don't add more than 65535 keys to a table, as this will break some Lua runtimes we're using._
+
 ## 6. Constants
 
 6.1. Constants are given in ALL_CAPS, with words separated by underscores.
