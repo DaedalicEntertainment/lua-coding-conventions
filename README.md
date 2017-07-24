@@ -25,7 +25,7 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.2. _Each file should contain a single feature._
 
-2.3. _Each file starts with a header, containing the file name and summary._
+2.3. _Each file starts with a header containing the file summary._
 
 2.4. _In general, do not use any swearing in symbol names, comments or log output._
 
