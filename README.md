@@ -87,7 +87,7 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
-4.6. _Define abstract functions by providing a default implementation that raises an error._
+4.6. _Define abstract methods by providing a default implementation that raises an error._
 
 ## 5. Variables
 
@@ -195,25 +195,23 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 # Questions
 
-* LuaLint?
-* File Structure?
-* Coroutines? http://lua-users.org/wiki/CoroutinesTutorial
-* Tables?
-  * http://lua-users.org/wiki/ReadOnlyTables
-  * 65536 keys limit
-* Error Handling:
-  *  Use error and pcall? https://www.lua.org/pil/8.4.html 
-  * Strict Lua? http://lua-users.org/wiki/DetectingUndefinedVariables
-* lazy initialization
-* Atom Settings File (2 spaces, CRLF)
-* enum keyword = http://lua-users.org/wiki/ReadOnlyTables
+* enum keyword = http://lua-users.org/wiki/ReadOnlyTables ?
 * savegame compatibility
   * tag savegame variable names
   * after first release, always test new variables before using them
 * inheritance rules
-* "or _temporary"
 * multiple assignments per line: self._now, self._frameDelta = now, now - self._now
 * for loops: for i = #self._schedule, 1, -1 do
 * usage examples
-* type assertions: assert( type(eventId) == "string", "Invalid parameter #2: expected string, got"..type(eventId) )
 * topics added by Thorben and Daniel
+
+# ToDo
+
+* Check LuaLint: http://lua-users.org/wiki/DetectingUndefinedVariables
+* Create Atom Settings File (2 spaces, CRLF)
+* Add custom assertion functions, e.g.
+
+
+      function assertType(value, parameterIndex, expectedType)
+        assert(type(value) == expectedType, "Assertion failed: Invalid parameter #" .. parameterIndex .. ": expected " .. expectedType .. ", but was " .. type(value))
+      end
