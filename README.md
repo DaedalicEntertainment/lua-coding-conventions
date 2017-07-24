@@ -81,6 +81,10 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 4.4. _Functions for accessing fields of a class have their name begin with Get or Set._
 
+4.5. _Verify all function parameters using `assert` guards:_
+
+      assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
@@ -179,6 +183,10 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       ...
       end
 
+## 13. Error Handling
+
+13.1. _Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error._
+
 # Questions
 
 * LuaLint?
@@ -192,6 +200,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
   * Strict Lua? http://lua-users.org/wiki/DetectingUndefinedVariables
 * lazy initialization
 * Atom Settings File (2 spaces, CRLF)
+* enum keyword = http://lua-users.org/wiki/ReadOnlyTables
 * savegame compatibility
   * tag savegame variable names
   * after first release, always test new variables before using them
