@@ -102,6 +102,15 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 6.1. Constants are given in ALL_CAPS, with words separated by underscores.
 
+6.2. _Group related constants with tables:_
+
+    Direction = {
+      NORTH = 1,
+      SOUTH = 2,
+      WEST = 3,
+      EAST = 4
+    }
+
 ## 7. Indentation & Whitespaces
 
 7.1. Indenting uses two spaces.
