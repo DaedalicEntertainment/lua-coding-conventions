@@ -190,6 +190,8 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       ...
       end
 
+12.2. _Implement class inheritance through our `class` function (similar to `inheritsFrom` at http://lua-users.org/wiki/InheritanceTutorial)._
+
 ## 13. Error Handling
 
 13.1. _Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error._
