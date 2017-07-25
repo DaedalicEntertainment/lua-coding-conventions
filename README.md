@@ -134,6 +134,14 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 5.4. _Don't add more than 65535 keys to a table, as this will break some Lua runtimes we're using._
 
+5.5. _Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):_
+    
+    -- Right.
+    if (isReady)
+
+    -- Wrong: Might more easily be confused with a function that actually makes the object ready.
+    if (ready)
+
 ## 6. Constants
 
 6.1. Constants are given in ALL_CAPS, with words separated by underscores.
