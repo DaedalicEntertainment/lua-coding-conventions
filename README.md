@@ -86,11 +86,16 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 4.4. _Functions for accessing fields of a class have their name begin with Get or Set._
 
-4.5. _Verify all function parameters using `assert` guards:_
+4.5. _Verify all mandatry function parameters using `assert` guards:_
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
-4.6. _Define abstract methods by providing a default implementation that raises an error._
+4.6. _Put all optional function parameters last and provide reasonable default values:_
+
+      function CoroutineScheduler:Wait(delay, ...)
+        delay = delay or self.MIN_WAIT_TIME
+
+4.7. _Define abstract methods by providing a default implementation that raises an error._
 
 ## 5. Variables
 
