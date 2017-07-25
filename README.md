@@ -99,6 +99,8 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 4.8. _Generally, do not define functions in the global namespace._
 
+4.9. _Avoid functions with more than six parameters._
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
