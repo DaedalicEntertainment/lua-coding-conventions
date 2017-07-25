@@ -29,6 +29,7 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.4. _Each file with a class definition should list their members in the following order:_
 
+* meta function overrides (e.g. __index, __tostring)
 * constants
 * fields
 * constructors
