@@ -192,6 +192,15 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 12.2. _Implement class inheritance through our `class` function (similar to `inheritsFrom` at http://lua-users.org/wiki/InheritanceTutorial)._
 
+12.3. _Use multiple assignments only when explicitly swapping two simple values:_
+
+      -- Okay.
+      x, y = y, x
+
+      -- Not okay.
+      a, b = c, c - a
+
+
 ## 13. Error Handling
 
 13.1. _Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error._
