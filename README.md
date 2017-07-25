@@ -97,6 +97,8 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 4.7. _Define abstract methods by providing a default implementation that raises an error._
 
+4.8. _Generally, do not define functions in the global namespace._
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
