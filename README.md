@@ -103,6 +103,14 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 4.9. _Avoid functions with more than six parameters._
 
+4.10. _Consider using string constants instead of boolean function parameters._
+
+      -- Hard to read.
+      MessageBox:Show("Nice Title", "Nice Text", false)
+
+      -- Easy to read.
+      MessageBox:Show("Nice Title", "Nice Text", MessageBox.MESSAGEBOX_BUTTONS_OK)
+
 ## 5. Variables
 
 5.1. Variable names are lowercase and use underscores.
