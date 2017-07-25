@@ -25,7 +25,9 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 2.2. _Each file should contain a single feature._
 
-2.3. _Each file starts with a header containing the file summary._
+2.3. _Each file starts with a header containing the file summary. Use Doxygen syntax, and avoid redundant parts such as "This class..."_
+
+      --! \brief Schedules threads which are waiting for delay or event.
 
 2.4. _Each file with a class definition should list their members in the following order:_
 
