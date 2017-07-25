@@ -142,6 +142,14 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
     -- Wrong: Might more easily be confused with a function that actually makes the object ready.
     if (ready)
 
+5.6. _Don't use negative names for boolean variables._
+
+    -- Right.
+    if visible then
+
+    -- Wrong.
+    if not invisible then
+
 ## 6. Constants
 
 6.1. Constants are given in ALL_CAPS, with words separated by underscores.
