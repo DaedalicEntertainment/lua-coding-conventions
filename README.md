@@ -92,7 +92,7 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 4.4. _Functions for accessing fields of a class have their name begin with Get or Set._
 
-4.5. _Verify all mandatry function parameters using `assert` guards:_
+4.5. _Verify all mandatory function parameters using `assert` guards:_
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
@@ -140,11 +140,11 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 5.5. _Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):_
     
-    -- Right.
-    if (isReady)
+    -- Right:
+    if isReady then
 
     -- Wrong: Might more easily be confused with a function that actually makes the object ready.
-    if (ready)
+    if ready then
 
 5.6. _Don't use negative names for boolean variables._
 
@@ -254,15 +254,10 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 # Questions
 
-* enum keyword = http://lua-users.org/wiki/ReadOnlyTables ?
 * savegame compatibility
   * tag savegame variable names
   * after first release, always test new variables before using them
-* inheritance rules
-* multiple assignments per line: self._now, self._frameDelta = now, now - self._now
-* for loops: for i = #self._schedule, 1, -1 do
-* usage examples
-* topics added by Thorben and Daniel
+* topics added by Thorben
 
 # ToDo
 
@@ -274,3 +269,10 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       function assertType(value, parameterIndex, expectedType)
         assert(type(value) == expectedType, "Assertion failed: Invalid parameter #" .. parameterIndex .. ": expected " .. expectedType .. ", but was " .. type(value))
       end
+* enum keyword = http://lua-users.org/wiki/ReadOnlyTables
+
+* Remove WIP notice
+* Remove italic and bold highlights
+* Do, Don't, Consider, Avoid
+* Reorder and regroup rules
+* Spell Check
