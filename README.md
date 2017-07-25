@@ -113,9 +113,9 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 6.1. Constants are given in ALL_CAPS, with words separated by underscores.
 
-6.2. _Group related constants with tables:_
+6.2. _Group related constants with tables made read-only through our custom `enum` function (similar to `readonlytable` at http://lua-users.org/wiki/ReadOnlyTables):_
 
-    Direction = {
+    Direction = enum {
       NORTH = 1,
       SOUTH = 2,
       WEST = 3,
