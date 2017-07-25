@@ -48,6 +48,10 @@ _Separate these sections with section headers:_
 
 2.6. _Do not use special characters such as hyphens (-) in symbol names._
 
+2.7. _Use PascalCase for file names._
+
+2.8. _Use camelCase for folder names._
+
 ## 3. Classes
 
 3.1. Class names (or at least metatables representing classes) are mixed case (BankAccount).
