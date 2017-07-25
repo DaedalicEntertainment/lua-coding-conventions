@@ -145,6 +145,8 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 8.1. _Keep lines shorter than 100 characters._
 
+8.2. _Add two empty lines between two functions._
+
 ## 9. Parentheses
 
 9.1. _Use parentheses to group expressions:_
