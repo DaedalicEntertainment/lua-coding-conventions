@@ -136,9 +136,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       -- ...
     end
 
-5.4. _Don't add more than 65535 keys to a table, as this will break some Lua runtimes we're using._
-
-5.5. _Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):_
+5.4. _Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):_
     
     -- Right:
     if isReady then
@@ -146,7 +144,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
     -- Wrong: Might more easily be confused with a function that actually makes the object ready.
     if ready then
 
-5.6. _Don't use negative names for boolean variables._
+5.5. _Don't use negative names for boolean variables._
 
     -- Right.
     if visible then
