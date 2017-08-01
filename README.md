@@ -139,10 +139,10 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 5.4. _Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):_
     
     -- Right:
-    if isReady then
+    if IsReady() then
 
-    -- Wrong: Might more easily be confused with a function that actually makes the object ready.
-    if ready then
+    -- Wrong: Getter might more easily be confused with a function that actually makes the object ready.
+    if Ready() then
 
 5.5. _Don't use negative names for boolean variables._
 
