@@ -255,9 +255,6 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 * savegame compatibility
   * tag savegame variable names
   * after first release, always test new variables before using them
-* "Description:"
-* Iterate vs. Iter
-* topics added by Thorben
 
 # ToDo
 
@@ -270,7 +267,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
         assert(type(value) == expectedType, "Assertion failed: Invalid parameter #" .. parameterIndex .. ": expected " .. expectedType .. ", but was " .. type(value))
       end
 * enum keyword = http://lua-users.org/wiki/ReadOnlyTables
-
+* class keyword = http://lua-users.org/wiki/InheritanceTutorial (similar to inheritsFrom)
 * Remove WIP notice
 * Remove italic and bold highlights
 * Do, Don't, Consider, Avoid
