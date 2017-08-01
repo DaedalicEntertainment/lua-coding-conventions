@@ -255,6 +255,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 * savegame compatibility
   * tag savegame variable names
   * after first release, always test new variables before using them
+* begin event handlers with "On"?
 
 # ToDo
 
