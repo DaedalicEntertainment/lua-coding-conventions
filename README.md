@@ -8,12 +8,6 @@ This document summarizes the high-level coding conventions for writing Lua code 
 
 The goal is to make it easier to work in similar teams inside and outside the company, as well as have client code blend in with other code of the Lua API. We are providing a complete summary here in order to allow people to understand the conventions at a glance, instead of having to open multiple documents. Our coding conventions are numbered, which makes it easier to refer to them in code reviews.
 
-Additions are _highlighted in italic_. These have been made where the official coding standard doesn't explictily include a rule, but we felt that further clarification is required.
-
-Exceptions are __highlighted in bold__. You'll always find the justification of the exception right next to the rule.
-
-In case we've missed recent changes to the Lua Style Guide, or you can spot any other issue, please [create a pull request](https://help.github.com/articles/creating-a-pull-request/).
-
 
 ## 1. Modules
 
@@ -21,15 +15,15 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 
 ## 2. Files
 
-2.1. _Files should not be longer than 1000 lines. Some Lua files might be used in Visionaire projects, in which case they'll be part the project file and must not exceed 65536 characters._
+2.1. Files should not be longer than 1000 lines. Some Lua files might be used in Visionaire projects, in which case they'll be part the project file and must not exceed 65536 characters.
 
-2.2. _Each file should contain a single feature._
+2.2. Each file should contain a single feature.
 
-2.3. _Each file starts with a header containing the file summary. Use Doxygen syntax, and avoid redundant parts such as "This class..."_
+2.3. Each file starts with a header containing the file summary. Use Doxygen syntax, and avoid redundant parts such as "This class..."
 
       --! \brief Schedules threads which are waiting for delay or event.
 
-2.4. _Each file with a class definition should list their members in the following order:_
+2.4. Each file with a class definition should list their members in the following order:
 
 * meta function overrides (e.g. __index, __tostring)
 * constants
@@ -38,19 +32,19 @@ In case we've missed recent changes to the Lua Style Guide, or you can spot any 
 * public functions (see below)
 * private functions (see below)
 
-_Separate these sections with section headers:_
+Separate these sections with section headers:
 
     -- ----------------------------------------------------------------------------
     -- Constructors
     -- ----------------------------------------------------------------------------
 
-2.5. _In general, do not use any swearing in symbol names, comments or log output._
+2.5. In general, do not use any swearing in symbol names, comments or log output.
 
-2.6. _Do not use special characters such as hyphens (-) in symbol names._
+2.6. Do not use special characters such as hyphens (-) in symbol names.
 
-2.7. _Use PascalCase for file names._
+2.7. Use PascalCase for file names.
 
-2.8. _Use camelCase for folder names._
+2.8. Use camelCase for folder names.
 
 ## 3. Classes
 
@@ -58,15 +52,15 @@ _Separate these sections with section headers:_
 
 3.2. Acronyms (e.g. XML) only uppercase the first letter (XmlDocument). 
 
-3.3. _Use the short syntax with colons (:) for accessing class members._
+3.3. Use the short syntax with colons (:) for accessing class members.
 
-3.4. _Define all fields of your class at the beginning of your class definition, even those that are not used immediately. This gives readers a better overview of the model of the class, and allows for easier documentation of these fields._
+3.4. Define all fields of your class at the beginning of your class definition, even those that are not used immediately. This gives readers a better overview of the model of the class, and allows for easier documentation of these fields.
 
-3.5. _Avoid classes with more than 40 methods._
+3.5. Avoid classes with more than 40 methods.
 
 ## 4. Functions
 
-4.1. _Function names are camelCase. If the function is designed to be part of the public interface of a class, its name is PascalCase._
+4.1. Function names are camelCase. If the function is designed to be part of the public interface of a class, its name is PascalCase.
 
 4.2. In general, use the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
 
@@ -78,9 +72,9 @@ _Separate these sections with section headers:_
       f = function (...)
       end
 
-_You may use the second variant of explicitly assigning it to a variable for special cases, e.g. using them as function parameters or table values._
+You may use the second variant of explicitly assigning it to a variable for special cases, e.g. using them as function parameters or table values.
 
-4.3. _Don't add a space between function name and parameter list:_
+4.3. Don't add a space between function name and parameter list:
 
       -- Right:
       function f(...)
@@ -90,26 +84,26 @@ _You may use the second variant of explicitly assigning it to a variable for spe
       function f (...)
       end
 
-4.4. _Names of functions for accessing fields of a class begin with `Get` or `Set`. This implies that we consider them part of the public interface of the class._
+4.4. Names of functions for accessing fields of a class begin with `Get` or `Set`. This implies that we consider them part of the public interface of the class.
 
-4.5. _Names of functions that are used as callbacks for events begin with `on`. This implies that we don't consider them part of the public interface of the class._
+4.5. Names of functions that are used as callbacks for events begin with `on`. This implies that we don't consider them part of the public interface of the class.
 
-4.6. _Verify all mandatory function parameters using `assert` guards:_
+4.6. Verify all mandatory function parameters using `assert` guards:
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
-4.7. _Put all optional function parameters last and provide reasonable default values:_
+4.7. Put all optional function parameters last and provide reasonable default values:
 
       function CoroutineScheduler:Wait(delay, ...)
         delay = delay or self.MIN_WAIT_TIME
 
-4.8. _Define abstract methods by providing a default implementation that raises an error._
+4.8. Define abstract methods by providing a default implementation that raises an error.
 
-4.9. _Generally, do not define functions in the global namespace._
+4.9. Generally, do not define functions in the global namespace.
 
-4.10. _Avoid functions with more than six parameters._
+4.10. Avoid functions with more than six parameters.
 
-4.11. _Consider using string constants instead of boolean function parameters._
+4.11. Consider using string constants instead of boolean function parameters.
 
       -- Hard to read.
       MessageBox:Show("Nice Title", "Nice Text", false)
@@ -132,13 +126,13 @@ _You may use the second variant of explicitly assigning it to a variable for spe
 
 5.3. The variable consisting of only an underscore _ is commonly used as a placeholder when you want to ignore the variable.
 
-_In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughdeget"). Single character variable names are only okay for counters and temporaries, where the purpose of the variable is obvious. Even for iterators, it is very helpful to use more descriptive names:_
+In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughdeget"). Single character variable names are only okay for counters and temporaries, where the purpose of the variable is obvious. Even for iterators, it is very helpful to use more descriptive names:
 
     for coroutine, thread in pairs(self.threads) do
       -- ...
     end
 
-5.4. _Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):_
+5.4. Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):
     
     -- Right:
     if IsReady() then
@@ -146,7 +140,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
     -- Wrong: Getter might more easily be confused with a function that actually makes the object ready.
     if Ready() then
 
-5.5. _Don't use negative names for boolean variables._
+5.5. Don't use negative names for boolean variables.
 
     -- Right.
     if visible then
@@ -158,7 +152,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 6.1. Constants are given in ALL_CAPS, with words separated by underscores.
 
-6.2. _Group related constants with tables made read-only through our custom `enum` function (similar to `readonlytable` at http://lua-users.org/wiki/ReadOnlyTables):_
+6.2. Group related constants with tables made read-only through our custom `enum` function (similar to `readonlytable` at http://lua-users.org/wiki/ReadOnlyTables):
 
     Direction = enum {
       NORTH = 1,
@@ -171,17 +165,17 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 7.1. Indenting uses two spaces.
 
-7.2. _Surround binary operators with spaces._
+7.2. Surround binary operators with spaces.
 
 ## 8. Line Breaks
 
-8.1. _Keep lines shorter than 100 characters._
+8.1. Keep lines shorter than 100 characters.
 
-8.2. _Add two empty lines between two functions._
+8.2. Add two empty lines between two functions.
 
 ## 9. Parentheses
 
-9.1. _Use parentheses to group expressions:_
+9.1. Use parentheses to group expressions:
 
       // Wrong
       if (a and b or c) then
@@ -189,7 +183,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       // Correct
       if ((a and b) or c) then
 
-9.2. _Don't use spaces after parentheses:_
+9.2. Don't use spaces after parentheses:
 
       // Wrong
       if ( ( a and b ) or c ) then
@@ -200,7 +194,7 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 ## 10. Control Flow
 
-10.1. _Do not put `else` after jump statements:_
+10.1. Do not put `else` after jump statements:
 
       -- Wrong
       if thisOrThat then
@@ -220,9 +214,9 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 11.1. Use a space after `--`. 
 
-11.2. _Place the comment on a separate line, not at the end of a line of code._
+11.2. Place the comment on a separate line, not at the end of a line of code.
 
-11.3. _Don't use square brackets [[ ]] for comments._
+11.3. Don't use square brackets [[ ]] for comments.
 
 ## 12. Language Features
 
@@ -237,9 +231,9 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
       ...
       end
 
-12.2. _Implement class inheritance through our `class` function (similar to `inheritsFrom` at http://lua-users.org/wiki/InheritanceTutorial)._
+12.2. Implement class inheritance through our `class` function (similar to `inheritsFrom` at http://lua-users.org/wiki/InheritanceTutorial).
 
-12.3. _Use multiple assignments only when explicitly swapping two simple values:_
+12.3. Use multiple assignments only when explicitly swapping two simple values:
 
       -- Okay.
       x, y = y, x
@@ -250,22 +244,12 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 
 ## 13. Error Handling
 
-13.1. _Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error._
+13.1. Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error.
 
 # ToDo
 
-* Check LuaLint: http://lua-users.org/wiki/DetectingUndefinedVariables
-* Create Atom Settings File (2 spaces, CRLF)
-* Add custom assertion functions, e.g.
-
-
-      function assertType(value, parameterIndex, expectedType)
-        assert(type(value) == expectedType, "Assertion failed: Invalid parameter #" .. parameterIndex .. ": expected " .. expectedType .. ", but was " .. type(value))
-      end
-* enum keyword = http://lua-users.org/wiki/ReadOnlyTables
-* class keyword = http://lua-users.org/wiki/InheritanceTutorial (similar to inheritsFrom)
-* Remove WIP notice
 * Remove italic and bold highlights
 * Do, Don't, Consider, Avoid
 * Reorder and regroup rules
 * Spell Check
+* Remove WIP notice
