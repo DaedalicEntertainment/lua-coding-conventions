@@ -90,24 +90,26 @@ _You may use the second variant of explicitly assigning it to a variable for spe
       function f (...)
       end
 
-4.4. _Functions for accessing fields of a class have their name begin with Get or Set._
+4.4. _Names of functions for accessing fields of a class begin with `Get` or `Set`. This implies that we consider them part of the public interface of the class._
 
-4.5. _Verify all mandatory function parameters using `assert` guards:_
+4.5. _Names of functions that are used as callbacks for events begin with `on`. This implies that we don't consider them part of the public interface of the class._
+
+4.6. _Verify all mandatory function parameters using `assert` guards:_
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
-4.6. _Put all optional function parameters last and provide reasonable default values:_
+4.7. _Put all optional function parameters last and provide reasonable default values:_
 
       function CoroutineScheduler:Wait(delay, ...)
         delay = delay or self.MIN_WAIT_TIME
 
-4.7. _Define abstract methods by providing a default implementation that raises an error._
+4.8. _Define abstract methods by providing a default implementation that raises an error._
 
-4.8. _Generally, do not define functions in the global namespace._
+4.9. _Generally, do not define functions in the global namespace._
 
-4.9. _Avoid functions with more than six parameters._
+4.10. _Avoid functions with more than six parameters._
 
-4.10. _Consider using string constants instead of boolean function parameters._
+4.11. _Consider using string constants instead of boolean function parameters._
 
       -- Hard to read.
       MessageBox:Show("Nice Title", "Nice Text", false)
@@ -249,13 +251,6 @@ _In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughd
 ## 13. Error Handling
 
 13.1. _Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error._
-
-# Questions
-
-* savegame compatibility
-  * tag savegame variable names
-  * after first release, always test new variables before using them
-* begin event handlers with "On"?
 
 # ToDo
 
