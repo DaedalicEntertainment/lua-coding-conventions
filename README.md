@@ -11,19 +11,19 @@ The goal is to make it easier to work in similar teams inside and outside the co
 
 ## 1. Modules
 
-1.1. Module names are nouns with names that are short and lowercase, with nothing between words.
+1.1. __DO__ use short and lowercase nouns as module names, with nothing between words.
 
 ## 2. Files
 
-2.1. Files should not be longer than 1000 lines. Some Lua files might be used in Visionaire projects, in which case they'll be part the project file and must not exceed 65536 characters.
+2.1. __AVOID__ files with more than 1000 lines. Some Lua files might be used in Visionaire projects, in which case they'll be part the project file and must not exceed 65536 characters.
 
-2.2. Each file should contain a single feature.
+2.2. __DO NOT__ cover more than a single feature in each file.
 
-2.3. Each file starts with a header containing the file summary. Use Doxygen syntax, and avoid redundant parts such as "This class..."
+2.3. __DO__ add a header with a summary to each file. Use Doxygen syntax, and avoid redundant parts such as "This class..."
 
       --! \brief Schedules threads which are waiting for delay or event.
 
-2.4. Each file with a class definition should list their members in the following order:
+2.4. __DO__ list class members in the following order:
 
 * meta function overrides (e.g. __index, __tostring)
 * constants
@@ -38,31 +38,33 @@ Separate these sections with section headers:
     -- Constructors
     -- ----------------------------------------------------------------------------
 
-2.5. In general, do not use any swearing in symbol names, comments or log output.
+2.5. __DO NOT__ use any swearing in symbol names, comments or log output.
 
-2.6. Do not use special characters such as hyphens (-) in symbol names.
+2.6. __DO NOT__ use special characters such as hyphens (-) in symbol names.
 
-2.7. Use PascalCase for file names.
+2.7. __DO__ use PascalCase for file names.
 
-2.8. Use camelCase for folder names.
+2.8. __DO__ use camelCase for folder names.
 
 ## 3. Classes
 
-3.1. Class names (or at least metatables representing classes) are mixed case (BankAccount).
+3.1. __DO__ use PascalCase for class names (or at least metatables representing classes), e.g. BankAccount.
 
-3.2. Acronyms (e.g. XML) only uppercase the first letter (XmlDocument). 
+3.2. __DO__ uppercase the first letter of acronyms, only, e.g. XmlDocument.
 
-3.3. Use the short syntax with colons (:) for accessing class members.
+3.3. __DO__ use the short syntax with colons (:) for accessing class members.
 
-3.4. Define all fields of your class at the beginning of your class definition, even those that are not used immediately. This gives readers a better overview of the model of the class, and allows for easier documentation of these fields.
+3.4. __DO__ define all fields of your class at the beginning of your class definition, even those that are not used immediately. This gives readers a better overview of the model of the class, and allows for easier documentation of these fields.
 
-3.5. Avoid classes with more than 40 methods.
+3.5. __AVOID__ classes with more than 40 methods.
 
 ## 4. Functions
 
-4.1. Function names are camelCase. If the function is designed to be part of the public interface of a class, its name is PascalCase.
+4.1. __DO__ use PascalCase for names of functions that are designed to be part of the public interface of a class.
 
-4.2. In general, use the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
+4.2. __DO__ use camelCase for names of functions that are not designed to be part of the public interface of a class.
+
+4.3. __CONSIDER__ using the [syntax shortcut for named functions](http://lua-users.org/wiki/FunctionsTutorial): 
 
       -- Right:
       function f(...)
@@ -74,7 +76,7 @@ Separate these sections with section headers:
 
 You may use the second variant of explicitly assigning it to a variable for special cases, e.g. using them as function parameters or table values.
 
-4.3. Don't add a space between function name and parameter list:
+4.4. __DO NOT__ add a space between function name and parameter list:
 
       -- Right:
       function f(...)
@@ -84,38 +86,38 @@ You may use the second variant of explicitly assigning it to a variable for spec
       function f (...)
       end
 
-4.4. Names of functions for accessing fields of a class begin with `Get` or `Set`. This implies that we consider them part of the public interface of the class.
+4.5. __DO__ begin names of functions for accessing fields of a class with `Get` or `Set`. This implies that we consider them part of the public interface of the class.
 
-4.5. Names of functions that are used as callbacks for events begin with `on`. This implies that we don't consider them part of the public interface of the class.
+4.6. __DO__ begin names of functions that are used as callbacks for events with `on`. This implies that we don't consider them part of the public interface of the class.
 
-4.6. Verify all mandatory function parameters using `assert` guards:
+4.7. __DO__ Verify all mandatory function parameters using `assert` guards:
 
       assert(type(eventId) == "string", "Invalid parameter #2: expected string, got ".. type(eventId))
 
-4.7. Put all optional function parameters last and provide reasonable default values:
+4.8. __DO__ put all optional function parameters last and provide reasonable default values:
 
       function CoroutineScheduler:Wait(delay, ...)
         delay = delay or self.MIN_WAIT_TIME
 
-4.8. Define abstract methods by providing a default implementation that raises an error.
+4.9. __DO__ define abstract methods by providing a default implementation that raises an error.
 
-4.9. Generally, do not define functions in the global namespace.
+4.10. __AVOID__ defining functions in the global namespace. This is only allowed for core functions, such as `class` or logging functions.
 
-4.10. Avoid functions with more than six parameters.
+4.11. __AVOID__ functions with more than six parameters.
 
-4.11. Consider using string constants instead of boolean function parameters.
+4.12. __CONSIDER__ using string constants instead of boolean function parameters.
 
-      -- Hard to read.
-      MessageBox:Show("Nice Title", "Nice Text", false)
-
-      -- Easy to read.
+      -- Right:
       MessageBox:Show("Nice Title", "Nice Text", MessageBox.MESSAGEBOX_BUTTONS_OK)
+
+      -- Wrong: Meaning of third parameter is not immediately obvious.
+      MessageBox:Show("Nice Title", "Nice Text", false)
 
 ## 5. Variables
 
-5.1. Variable names are lowercase and use underscores.
+5.1. __DO__ use lowercase names lowercase with underscores as variable names.
 
-5.2. Use [locals rather than globals](http://lua-users.org/wiki/ScopeTutorial) whenever possible. Access to locals is faster than globals, since globals require a table lookup at run-time, while locals exist as registers. 
+5.2. __DO__ use [locals rather than globals](http://lua-users.org/wiki/ScopeTutorial) whenever possible. Access to locals is faster than globals, since globals require a table lookup at run-time, while locals exist as registers. 
 
       local x = 0
       local function count()
@@ -123,8 +125,7 @@ You may use the second variant of explicitly assigning it to a variable for spec
             print(x)
       end
 
-
-5.3. The variable consisting of only an underscore _ is commonly used as a placeholder when you want to ignore the variable.
+5.3. __CONSIDER__ using a variable name consisting of only an underscore `_` as a placeholder when you want to ignore the variable.
 
 In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughdeget"). Single character variable names are only okay for counters and temporaries, where the purpose of the variable is obvious. Even for iterators, it is very helpful to use more descriptive names:
 
@@ -132,7 +133,7 @@ In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughde
       -- ...
     end
 
-5.4. Begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):
+5.4. __DO__ begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):
     
     -- Right:
     if IsReady() then
@@ -140,19 +141,19 @@ In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughde
     -- Wrong: Getter might more easily be confused with a function that actually makes the object ready.
     if Ready() then
 
-5.5. Don't use negative names for boolean variables.
+5.5. __DO NOT__ use negative names for boolean variables.
 
-    -- Right.
+    -- Right:
     if visible then
 
-    -- Wrong.
+    -- Wrong: Double negation is hard to read.
     if not invisible then
 
 ## 6. Constants
 
-6.1. Constants are given in ALL_CAPS, with words separated by underscores.
+6.1. __DO__ use names given in ALL_CAPS for constants, with words separated by underscores.
 
-6.2. Group related constants with tables made read-only through our custom `enum` function (similar to `readonlytable` at http://lua-users.org/wiki/ReadOnlyTables):
+6.2. __DO__ group related constants with tables made read-only through our custom `enum` function (similar to `readonlytable` at http://lua-users.org/wiki/ReadOnlyTables):
 
     Direction = enum {
       NORTH = 1,
@@ -163,64 +164,65 @@ In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughde
 
 ## 7. Indentation & Whitespaces
 
-7.1. Indenting uses two spaces.
+7.1. __DO__ use two spaces for indentation.
 
-7.2. Surround binary operators with spaces.
+7.2. __DO__ surround binary operators with spaces.
 
 ## 8. Line Breaks
 
-8.1. Keep lines shorter than 100 characters.
+8.1. __CONSIDER__ keeping lines shorter than 100 characters.
 
-8.2. Add two empty lines between two functions.
+8.2. __DO__ add two empty lines between two functions.
 
 ## 9. Parentheses
 
-9.1. Use parentheses to group expressions:
+9.1. __DO__ use parentheses to group expressions:
 
-      // Wrong
+      -- Right:
+      if ((a and b) or c) then
+
+      -- Wrong: Operator precedence is not immediately clear.
       if (a and b or c) then
 
-      // Correct
+
+9.2. __DO NOT__ use spaces after parentheses:
+      
+      -- Right:
       if ((a and b) or c) then
 
-9.2. Don't use spaces after parentheses:
-
-      // Wrong
+      -- Wrong:
       if ( ( a and b ) or c ) then
-
-      // Correct
-      if ((a and b) or c) then
-
 
 ## 10. Control Flow
 
-10.1. Do not put `else` after jump statements:
+10.1. __DO NOT__ put `else` after jump statements:
 
-      -- Wrong
-      if thisOrThat then
-          return
-      else
-          somethingElse()
-      end
-
-      -- Correct
+      -- Right:
       if thisOrThat then
           return
       end
           
       somethingElse()
 
+
+      -- Wrong: Causes unnecessary indentation of the whole else block.
+      if thisOrThat then
+          return
+      else
+          somethingElse()
+      end
+
 ## 11. Comments
 
-11.1. Use a space after `--`. 
+11.1. __DO__ use a space after `--`. 
 
-11.2. Place the comment on a separate line, not at the end of a line of code.
+11.2. __DO__ place the comment on a separate line, not at the end of a line of code.
 
-11.3. Don't use square brackets [[ ]] for comments.
+11.3. __DO NOT__ use square brackets [[ ]] for comments.
 
 ## 12. Language Features
 
-12.1. Test whether a variable is not `nil` before using it. Write the variable name rather than explicitly compare against `nil`. Lua treats `nil` and `false` as `false` (and all other values as `true`) in a conditional:
+12.1. __DO__ test whether a variable is not `nil` before using it. Write the variable name rather than explicitly compare against `nil`. Lua treats `nil` and `false` as `false` (and all other values as `true`) in a conditional:
 
       local line = io.read()
       if line then  -- instead of line ~= nil
@@ -231,25 +233,22 @@ In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughde
       ...
       end
 
-12.2. Implement class inheritance through our `class` function (similar to `inheritsFrom` at http://lua-users.org/wiki/InheritanceTutorial).
+12.2. __DO__ implement class inheritance through our `class` function (similar to `inheritsFrom` at http://lua-users.org/wiki/InheritanceTutorial).
 
-12.3. Use multiple assignments only when explicitly swapping two simple values:
+12.3. __AVOID__ using multiple assignments except for when explicitly swapping two simple values:
 
-      -- Okay.
+      -- Right:
       x, y = y, x
 
-      -- Not okay.
+      -- Wrong: Assigned values are not immediately obvious.
       a, b = c, c - a
 
 
 ## 13. Error Handling
 
-13.1. Use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error.
+13.1. __DO__ use [`pcall`](http://www.lua.org/pil/8.4.html) if calling a function might result in an error.
 
 # ToDo
 
-* Remove italic and bold highlights
-* Do, Don't, Consider, Avoid
 * Reorder and regroup rules
-* Spell Check
 * Remove WIP notice
