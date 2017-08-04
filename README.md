@@ -1,6 +1,6 @@
-# Lua Coding Conventions
+# Lua Coding Conventions 1.0
 
-This document summarizes the high-level coding conventions for writing Lua code at Daedalic Entertainment. They are based on the de-facto Lua Style Guide:
+This document summarizes the high-level coding conventions for writing Lua code at Daedalic Entertainment. They are based on the de-facto standard Lua Style Guide:
 
 * http://lua-users.org/wiki/LuaStyleGuide
 
@@ -98,9 +98,11 @@ You may use the second variant of explicitly assigning it to a variable for spec
       function CoroutineScheduler:Wait(delay, ...)
         delay = delay or self.MIN_WAIT_TIME
 
-4.9. __DO__ define abstract methods by providing a default implementation that raises an error.
+4.9. __DO__ define abstract methods by using our `abstract` function:
 
-4.10. __AVOID__ defining functions in the global namespace. This is only allowed for core functions, such as `class` or logging functions.
+      function onClick() abstract() end
+
+4.10. __AVOID__ defining functions in the global namespace. This is only allowed for core functions, such as `class()`, `enum()` or logging functions.
 
 4.11. __AVOID__ functions with more than six parameters.
 
@@ -115,7 +117,7 @@ You may use the second variant of explicitly assigning it to a variable for spec
 
 ## 5. Variables
 
-5.1. __DO__ use lowercase names with underscores as variable names.
+5.1. __DO__ use camelCase for variable names.
 
 5.2. __DO__ begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):
     
