@@ -117,7 +117,7 @@ You may use the second variant of explicitly assigning it to a variable for spec
 
 ## 5. Variables
 
-5.1. __DO__ use lowercase names with underscores as variable names.
+5.1. __DO__ use camelCase for variable names.
 
 5.2. __DO__ begin boolean variable names with a prefix that indicates its binary semantics (e.g. is, has):
     
