@@ -1,6 +1,6 @@
-# Lua Coding Conventions
+# Lua Coding Conventions 1.0
 
-This document summarizes the high-level coding conventions for writing Lua code at Daedalic Entertainment. They are based on the de-facto Lua Style Guide:
+This document summarizes the high-level coding conventions for writing Lua code at Daedalic Entertainment. They are based on the de-facto standard Lua Style Guide:
 
 * http://lua-users.org/wiki/LuaStyleGuide
 
