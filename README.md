@@ -98,9 +98,11 @@ You may use the second variant of explicitly assigning it to a variable for spec
       function CoroutineScheduler:Wait(delay, ...)
         delay = delay or self.MIN_WAIT_TIME
 
-4.9. __DO__ define abstract methods by providing a default implementation that raises an error.
+4.9. __DO__ define abstract methods by using our `abstract` function:
 
-4.10. __AVOID__ defining functions in the global namespace. This is only allowed for core functions, such as `class` or logging functions.
+      function onClick() abstract() end
+
+4.10. __AVOID__ defining functions in the global namespace. This is only allowed for core functions, such as `class()`, `enum()` or logging functions.
 
 4.11. __AVOID__ functions with more than six parameters.
 
