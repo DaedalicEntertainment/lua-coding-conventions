@@ -44,6 +44,8 @@ Separate these sections with section headers:
 
 ## 3. Classes
 
+Although programming in Lua works well without classes, we've learned that grouping functionality in classes improved our code structure by a big deal.
+
 3.1. __DO__ use PascalCase for class names (or at least metatables representing classes), e.g. BankAccount.
 
 3.2. __DO__ uppercase the first letter of acronyms, only, e.g. XmlDocument.
