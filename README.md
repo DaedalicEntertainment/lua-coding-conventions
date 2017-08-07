@@ -249,7 +249,7 @@ In all other cases, avoid short or meaningless names (e.g. "a", "rbarr", "nughde
 
 12.2. __DO__ place the comment on a separate line, not at the end of a line of code.
 
-12.3. __DO NOT__ use square brackets [[ ]] for comments.
+12.3. __DO NOT__ use square brackets [[ ]] for code comments, but for documentating files and members, only.
 
 
 ## 13. Additional Naming Conventions
